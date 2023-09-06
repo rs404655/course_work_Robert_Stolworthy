@@ -1,0 +1,5 @@
+-On scale test decimal I found that the circle wasn't 80% the size when using .8. So instead of "radius = radius + factor;" I changed it to "radius = radius * factor;"
+-On scale test negative the function would return a negative value which is wrong (it is supposed to return nothing) I created an if statement that if factor was less than 0 it would return radius with no changes.
+-On intersection edge the two circles were not intersecting because the Circle1 intersection() did not have a large enough area to account for max distance intersection which is 2 radius. instead of "<radius" it's now "<=(2*radius)"
+-On simpleMove Circle 2 was incorrect. It had switched x and y in it's creation, so in Circle2.java I fixed the error of "super(y,x,z)" to "super(x,y,z);"
+-On intersection edge the same problem occured with Circle2 so I changed the test again to the actual max distance of 2 radius. Instead of (d < radius) it's (d<(2 * radius)).
